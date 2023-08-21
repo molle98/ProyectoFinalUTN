@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comics</title>
+  <link rel="stylesheet" href="http://localhost:3001/app.css"> <!-- Cambia la URL según tu configuración -->
+</head>
+<body>
+  <div>
+    <main class="holder">
+      <div class="comics-container">
+        <a href="/comics/create" class="create-comic-btn">Agregar Cómic</a>
+        {{#each comics}}
+        <div class="comic">
+          <img src="{{image}}" alt="{{title}}">
+          <h3>{{title}}</h3>
+          <div class="button-container">
+          <a href="/comics/delete/{{id}}" class="button delete-btn">Eliminar</a>
+          <a href="/comics/edit/{{id}}" class="button edit-btn">Editar</a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </main>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

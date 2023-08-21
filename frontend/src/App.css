@@ -1,0 +1,425 @@
+body {
+  background-color: #f2f2f2;
+}
+
+header {
+  background-color: rgb(27, 18, 74);
+  padding: 16px 0;
+}
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+nav {
+  background-color: rgb(87, 77, 135);
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  flex-grow: 1;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+nav ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  background-color: #ccc;
+  clear: both;
+  color: #333;
+  text-align: center;
+  padding: 5px 0;
+  margin-top: 20px;
+}
+
+nav ul li a.activo {
+  background-color: rgb(65, 45, 168);
+}
+
+.holder {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.homeimg img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+h2 {
+  color: rgb(27, 18, 74);
+}
+
+.persona img {
+  max-width: 40%;
+  border-radius: 15px;
+}
+
+.card {
+  display: inline-block;
+}
+
+.card img {
+  width: 200px;
+  height: 300px;
+  display: inline-block;
+  border-radius: 15px;
+}
+
+.card-body a {
+  color: blue;
+}
+
+.card-body a:hover {
+  color: red;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+/* Estilos para dispositivos grandes (mayor a 768px) */
+.comics-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espaciado entre los cómics */
+}
+
+.comic {
+  width: calc(25.33% - 20px); /* Ancho para tres columnas */
+  margin: 10px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.comic img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.comic h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.comic .button-container {
+  display: flex;
+  justify-content: space-around; /* Distribuye el espacio entre los botones */
+  margin-top: 10px;
+}
+
+.comic .button-container a {
+  flex-grow: 1; /* Hace que los botones tengan el mismo ancho */
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.comic .button-container a.delete-btn {
+  background-color: #ff4f4f;
+}
+
+.comic .button-container a.edit-btn {
+  background-color: #4caf50;
+}
+
+/* Estilos para dispositivos pequeños (hasta 768px) */
+@media screen and (max-width: 768px) {
+  .comics-container {
+    gap: 10px; /* Espaciado más reducido entre los cómics */
+  }
+
+  .comic {
+    width: calc(50% - 10px); /* Ancho para dos columnas */
+  }
+}
+
+/* Estilos para dispositivos muy pequeños (hasta 480px) */
+@media screen and (max-width: 480px) {
+  .comic {
+    width: 100%; /* Ancho completo para una columna */
+    margin: 10px 0;
+  }
+}
+
+.create-comic-btn {
+  position: absolute;
+  top: 50px;
+  right: 90px; 
+  background-color: green;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .create-comic-btn {
+    top: 20px;
+    right: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+.comic img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+
+.comic-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.comic-form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+}
+
+.comic-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.comic-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.comic-form input[type="text"],
+.comic-form input[type="number"],
+.comic-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.comic-form textarea {
+  resize: vertical;
+}
+
+.comic-form button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.comic-form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.comic-delete {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.comic-delete h2 {
+  color: #333;
+  text-align: center;
+}
+
+.comic-delete p {
+  color: #555;
+  text-align: center;
+}
+
+.comic-delete .form-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.comic-delete .form-container button[type="submit"] {
+  background-color: #ff4f4f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.comic-delete .form-container a {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.comic-delete .form-container a:hover {
+  background-color: #45a049;
+}
+
+.comic {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comic img {
+  max-width: 100%;
+  height: auto;
+}
+
+.comic h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.comic .button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center; /* Alinea los botones horizontalmente */
+}
+
+.comic .button-container a {
+  display: inline-block;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.comic .button-container a.delete-btn {
+  background-color: #ff4f4f;
+}
+
+.comic .button-container a.edit-btn {
+  background-color: #4caf50;
+}
+
+.comic-form a.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+  padding: 15px 24px; 
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.comic-form a.cancel-btn:hover {
+  background-color: #bbb;
+}

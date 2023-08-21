@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agregar Cómic</title>
+    <link rel="stylesheet" href="http://localhost:3001/app.css">
+</head>
+
+<body>
+     <form class="comic-form" action="{{createUrl}}" method="POST">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="image">Imagen URL:</label>
+        <input type="text" id="image" name="image" required>
+
+        <label for="price">Precio:</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+
+        <label for="description">Descripción:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <button type="submit">Agregar</button>
+        <a href="/comics" class="cancel-btn">Cancelar</a>
+    </form>
